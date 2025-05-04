@@ -22,6 +22,7 @@ header {
 
     .header-content {
         background-color: $yellow;
+        font-size: $headerFontSize-Mobile;
 
         h1 {
             margin: 0;
@@ -32,7 +33,7 @@ header {
         }
 
         p {
-            width: 900px;
+            max-width: 900px;
             margin: 0 auto;
         }
     }
@@ -112,4 +113,78 @@ header {
 /*=====Footer Section=====*/
 footer {
     @include footerStyle
+}
+
+
+
+/*--- MOBILE SCREEN ---*/
+@media screen and (max-width: 768px) {
+    body {
+        @include bodyStyle-Mobile;
+    }
+
+    header {
+        @include headerStyle-Mobile;
+
+        nav {
+            @include navStyle-Mobile;
+        }
+    }
+
+    #works {
+        .filter-dropdown {
+            .filter-btn {
+                width: 100%;
+                text-align: left;
+                padding: 5px 10px;
+            }
+    
+            .filter-btn,
+            div {
+                background-color: black;
+                color: white;
+            }
+    
+            .dropdown-content {
+                display: none;
+                width: fit-content;
+    
+                div {
+                    padding: 5px 10px;
+                    border-top: 2px solid white;
+                    cursor: pointer;
+                }
+            }
+        }
+    
+        .work {
+            padding: 20px 0;
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+    
+            img {
+                display: block;
+                height: 200px;
+            }
+    
+            button {
+                padding: 7px 10px;
+                border: 1px solid black;
+                border-radius: 60px;
+                background-color: white;
+                font-size: $allTextFontSize-Mobile;
+            }
+        }
+    
+        #event,
+        #print,
+        #proddesign {
+            display: none;
+        }
+    }
+
+    footer {
+        @include footerStyle-Mobile;
+    }
 }
