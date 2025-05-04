@@ -8,11 +8,18 @@ $yellow: #FFF200;
 $lightblack: #282828;
 
 $webFont: "Poppins", sans-serif;
+
+/* for other screens */
 $headerFontSize: 30px;
 $h1FontSize: 64px;
 $allTextFontSize: 20px;
 $footerFontSize: 18px;
 $boarder: 15px;
+
+/*--- for mobile ---*/
+$headerFontSize-Mobile: 22px;
+$h1FontSize-Mobile: 32px;
+$allTextFontSize-Mobile: 15px;
 
 /*======Body Style=====*/
 @mixin bodyStyle {
@@ -198,5 +205,110 @@ $boarder: 15px;
     a {
         color: white;
         text-decoration: none;
+    }
+}
+
+
+/*--- MOBILE SCREEN ---*/
+@mixin bodyStyle-Mobile {
+    font-size: $allTextFontSize-Mobile;
+    background-color: aquamarine;
+
+    h1 {
+        font-size: $h1FontSize-Mobile;
+        margin: 0;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    
+}
+
+@mixin headerStyle-Mobile {    
+    .header-content {
+        border-radius: 30px;
+        padding: 10px;
+        margin-top: 10px;
+        font-size: $headerFontSize-Mobile;
+        text-align: center;
+    
+        h1 {
+            text-align: center;
+        }
+    
+        .header-content-mockups img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+    }
+}
+
+@mixin navStyle-Mobile {
+    .nav-other-screens {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        
+        div, a {
+            display: block;
+        }
+
+        .nav-logo-name img {
+            height: 50px;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+        }
+
+        .nav-btns {
+            background-color: black;
+            position: absolute;
+            right: 0;
+            top: 50px;
+
+            a {
+                margin: 10px;
+            }
+        }
+    }
+}
+
+@mixin footerStyle-Mobile {
+    .footer-pink,
+    .footer-blue,
+    .footer-yellow {
+        height: 15px;
+        width: 100%;
+    }
+    
+    .footer-content {
+        margin: 20px;
+        display: block;
+        //border: 1px solid white;
+
+        img {
+            height: 100px;
+        }
+
+        .contact-details {
+            display: block;
+            text-align: center;
+            /*if not center aligned
+            width: fit-content;
+            margin: 0 auto;*/
+            
+            div {
+                margin: 20px 0;
+            }
+        }
     }
 }
